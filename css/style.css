@@ -1,33 +1,188 @@
 @charset "UTF-8";
-/***************************************************************
-	Importação da formatação principal
-***************************************************************/
-@import url("principal.css") screen;
 
-/***************************************************************
-	Formatação desktop
-***************************************************************/
-@media screen and (max-width: 1500px) {
+@import url("../css/gridclear.css");
+
+/*RESET*/
+* {
+	font-size: 100%;
+	padding: 0px;
+	margin: 0px;
+	text-decoration: none;
+	font-family: Arial, Sans-serif;
+}
+
+body {
+	background-color: #fff;
+}
+
+/*Cabeçalho*/
+#cabecalho {
+	display: block;
+	width: 100%;
+	height: 10%;
+	background-color: #000;
+	color: #ccc;
+	font-size: 4em;
+	text-transform: uppercase;
+	overflow: hidden;
+}
+
+#cabecalho h1 {
+	margin: 20px 0 0 180px;
+	cursor: pointer;
+	transition: text-shadow 0.6s;
+}
+
+#cabecalho h1:hover {
+	text-shadow: 0 0 10px #fff;
+}
+
+#cabecalho img {
+	display: none;
+	position: fixed;
+	top: 10px;
+	left: 40px;
+	box-shadow: 0 0 20px #ccc;
+	transition: display 1s;
+}
+
+#cabecalho:hover img {
+	display: block;
+}
+
+/*Conteudo*/
+#conteudo {
+	height: 90%;
+	display: block;
+	/*background-color: #c3c3c3;*/
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+#conteudo div {
+	height: 40px;
+	text-align: center;
+	/*background-color: black;*/
+}
+
+#conteudo div h2 {
+	font-size: 1.6em;
+	margin-top: -20px;
+}
+
+#conteudo article {
+	background-color: #ccc;
+	cursor: pointer;
+	transition: box-shadow 0.6s;
+}
+
+#conteudo article:hover {
+	box-shadow: 0 0 30px #000;
+}
+
+#conteudo article img {
+	width: 100%;
+	height: 100%;
+}
+
+#capa01 figcaption, 
+#capa02 figcaption, 
+#capa03 figcaption, 
+#capa04 figcaption, 
+#capa05 figcaption, 
+#capa06 figcaption {
+	display: none
+}
+
+
+/*Menu Principal*/
+#div-menu {
+	position: relative;
+	display: block;
+	height: 60%;
+}
+
+#menu {
+	display: block;
+}
+
+#menu h1 {
+	display: none
+}
+
+ul {
+	display: block;
+}
+
+ul li {
+	background-color: #000;
+	display: block;
+	float: left;
+	height: 80%;
+	list-style: none;
+	padding: 20px 5px 20px;
+	margin-left: 5px;
+	margin-top: -8px;
+	cursor: pointer;
 	
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-weight: bold;
+	font-size: 1.4em;
+	color: #fff;
+
+	writing-mode: tb-rl;
+	transition: box-shadow 0.6s;
 }
 
-/***************************************************************
-	Formatação mobile
-***************************************************************/
-@media screen and (max-width: 600px) {
-	/****** Configuração do body mobile ******/
-	body {
-		font-size: 9pt;
-	}
+ul li:hover {
+	background-color: #ccc;
+	color: #000;
+	box-shadow: 0 0 18px #000;
 
-	/****** Configuração dic conteudo mobile ******/
-	div#conteudo {
-		width: 94%;
-		margin: -10px auto 0px;
-	}
+	transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
 }
 
-	/******  ******/
-	/******  ******/
-	/******  ******/
+/*Cores*/
+.cinza-claro {
+	background-color: rgb(204,204,204);
+}
+
+.cinza {
+	background-color: rgb(153,153,153);
+}
+
+.cinza-escuro-medio {
+	background-color: rgb(102,102,102);
+}
+
+.cinza-escuro {
+	background-color: rgb(77,77,77);
+}
+
+.cinza-mais-escuro {
+	background-color: rgb(26,26,26);
+}
+
+.preto {
+	background-color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
