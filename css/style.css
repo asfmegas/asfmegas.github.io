@@ -103,7 +103,6 @@ body {
 
 	/*Conteudo*/
 	#conteudo {
-		height: 90%;
 		padding: 10px;
 	}
 
@@ -116,7 +115,6 @@ body {
 		font-size: 1.6em;
 		margin-top: -20px;
 	}
-
 
 	/*Seções do conteúdo*/
 	figure {

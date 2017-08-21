@@ -1,28 +1,26 @@
 @charset "UTF-8";
 
-@media screen and (max-width: 1270px) {
-	/***************************************************************
-		Formatação conteúdo principal
-	***************************************************************/
-	
-
+@media screen and (max-width: 1270px) and (min-width: 880px) {
 	/***************************************************************
 		Formatação Cabeçalho
 	***************************************************************/
 	#cabecalho {
-		font-size: 1.8em;
+		font-size: 3em;
+		text-align: center;
 	}
 
 	#cabecalho h1 {
+		display: block;
+		width: 100%;
+		width: 600px;
 		letter-spacing: 3px;
-		margin: 20px 0 0 200px;
 	}
 
 	#cabecalho img {
 		display: block;
 		position: absolute;
-		top: 5px;
-		left: 20px;
+		top: 20px;
+		left: 22px;
 	}
 
 	/***************************************************************
@@ -30,7 +28,7 @@
 	***************************************************************/
 	/*Conteudo*/
 	#conteudo {
-		min-height: 650px;
+		height: 100%;
 		padding: 10px;
 		margin-top: 20px;
 	}
@@ -42,8 +40,8 @@
 	#conteudo div h2 {
 		letter-spacing: 3px;
 		font-size: 1.2em;
-		margin: -30px 0 0 100px;
-		text-align: left;
+		margin: -30px 0 0 0;
+		/*text-align: left;*/
 	}
 
 	/*Seções do conteúdo*/
@@ -137,7 +135,7 @@
 		display: inline-block;
 		position: absolute;
 		float: left;
-		top: 70px;
+		top: 100px;
 		left: 15%;
 		width: 70%;
 	}
@@ -177,8 +175,184 @@
 	#menu a:hover {
 		color: #000;
 	}
+}
 
+/***************************************************************
+	Screen 780 pixes
+***************************************************************/
+@media screen and (min-width: 765px) and (max-width: 880px) {
+	/***************************************************************
+		Formatação Cabeçalho
+	***************************************************************/
+	#cabecalho {
+		font-size: 3em;
+		text-align: center;
+	}
 
+	#cabecalho h1 {
+		display: block;
+		width: 100%;
+		width: 600px;
+		letter-spacing: 3px;
+	}
+
+	#cabecalho img {
+		display: none;
+	}
+
+	/***************************************************************
+		Formatação conteúdo
+	***************************************************************/
+	/*Conteudo*/
+	#conteudo {
+		height: 100%;
+		padding: 10px;
+		margin-top: 20px;
+	}
+
+	#conteudo div {
+		height: 40px;
+	}
+
+	#conteudo div h2 {
+		letter-spacing: 3px;
+		font-size: 1.2em;
+		margin: -30px 0 0 0;
+		/*text-align: left;*/
+	}
+
+	/*Seções do conteúdo*/
+	figure {
+		position: relative;
+	}
+
+	figcaption h3 {
+		text-align: center;
+		font-size: 1.4em;
+		border-bottom: 2px dotted #ccc;
+	}
+
+	figcaption h5 {
+		font-size: 1em;
+		margin-top: 10px;
+	}
+
+	figcaption a {
+		display: block;
+		text-decoration: none;
+		font-size: 1.4em;
+		color: #ccc;
+		text-align: center;
+		padding-top: 10px;
+	}
+
+	figcaption a:hover {
+		color: #fff;
+		text-decoration: underline;
+	}
+
+	#capa01 figcaption, 
+	#capa02 figcaption, 
+	#capa03 figcaption, 
+	#capa04 figcaption, 
+	#capa05 figcaption, 
+	#capa06 figcaption {
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		background-color: rgba(0,0,0,0.8);
+		color: #fff;
+		width: 100%;
+		height: 100%;
+		padding: 10px;
+		box-sizing: border-box;
+		transition: opacity: 0.6s;
+		font-family: Arial, Sans-serif;
+		overflow: auto;
+		text-align: justify;
+
+		transition: opacity 0.6s;
+	}
+
+	#capa01:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa02:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa03:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa04:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa05:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa06:hover figcaption{
+		opacity: 1;
+	}
+
+	/*Alterando blocos*/
+	.bloco10 {
+		width: 99%;
+	}
+
+	.bloco4 {
+		width: 49%;
+	}
+
+	/*Menu Principal*/
+	#div-menu {
+		display: inline-block;
+		position: absolute;
+		float: left;
+		top: 100px;
+		left: 15%;
+		width: 70%;
+	}
+
+	#menu {
+		display: block;
+	}
+
+	#menu h1 {
+		display: none;
+	}
+
+	#menu ul {
+		display: block;
+	}
+
+	#menu ul li {
+		list-style: none;
+		display: inline-block;
+		padding: 10px 20px;
+		margin-left: : -5px;
+	}
+
+	#menu ul li:hover {
+		background-color: #ccc;
+		color: #000;
+		box-shadow: 0 0 18px #000;
+	}
+
+	#menu a {
+		margin: -5px;
+		width: 100%;
+		color: #fff;
+		font-weight: bold;
+	}
+
+	#menu a:hover {
+		color: #000;
+	}
+}	
 
 
 	/***************************************************************
@@ -190,4 +364,212 @@
 	/***************************************************************
 
 	***************************************************************/
+	/***************************************************************
+
+	***************************************************************/
+	/***************************************************************
+
+	***************************************************************/
+
+@media screen and (min-width: 640px) and (max-width: 765px) {
+	/***************************************************************
+		Formatação Cabeçalho
+	***************************************************************/
+	#cabecalho {
+		font-size: 2.2em;
+		text-align: center;
+	}
+
+	#cabecalho h1 {
+		display: block;
+		width: 100%;
+		width: 600px;
+		letter-spacing: 3px;
+	}
+
+	#cabecalho img {
+		display: none;
+	}
+
+	/***************************************************************
+		Formatação conteúdo
+	***************************************************************/
+	/*Conteudo*/
+	#conteudo {
+		height: 100%;
+		padding: 10px;
+		margin-top: 20px;
+	}
+
+	#conteudo div {
+		height: 40px;
+	}
+
+	#conteudo div h2 {
+		letter-spacing: 3px;
+		font-size: 1.2em;
+		margin: -30px 0 0 0;
+		/*text-align: left;*/
+	}
+
+	/*Seções do conteúdo*/
+	figure {
+		position: relative;
+	}
+
+	figcaption h3 {
+		text-align: center;
+		font-size: 1.4em;
+		border-bottom: 2px dotted #ccc;
+	}
+
+	figcaption h5 {
+		font-size: 1em;
+		margin-top: 10px;
+	}
+
+	figcaption a {
+		display: block;
+		text-decoration: none;
+		font-size: 1.4em;
+		color: #ccc;
+		text-align: center;
+		padding-top: 10px;
+	}
+
+	figcaption a:hover {
+		color: #fff;
+		text-decoration: underline;
+	}
+
+	#capa01 figcaption, 
+	#capa02 figcaption, 
+	#capa03 figcaption, 
+	#capa04 figcaption, 
+	#capa05 figcaption, 
+	#capa06 figcaption {
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		background-color: rgba(0,0,0,0.8);
+		color: #fff;
+		width: 100%;
+		height: 100%;
+		padding: 10px;
+		box-sizing: border-box;
+		transition: opacity: 0.6s;
+		font-family: Arial, Sans-serif;
+		overflow: auto;
+		text-align: justify;
+
+		transition: opacity 0.6s;
+	}
+
+	#capa01:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa02:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa03:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa04:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa05:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa06:hover figcaption{
+		opacity: 1;
+	}
+
+	/*Alterando blocos*/
+	.bloco10 {
+		width: 99%;
+	}
+
+	.bloco4 {
+		width: 49%;
+	}
+
+	/*Menu Principal*/
+	#div-menu {
+		display: inline-block;
+		position: absolute;
+		float: left;
+		top: 80px;
+		left: 15%;
+		width: 70%;
+	}
+
+	#menu {
+		display: block;
+	}
+
+	#menu h1 {
+		display: none;
+	}
+
+	#menu ul {
+		display: block;
+	}
+
+	#menu ul li {
+		list-style: none;
+		display: inline-block;
+		padding: 5px 10px;
+		margin-left: : -5px;
+	}
+
+	#menu ul li:hover {
+		background-color: #ccc;
+		color: #000;
+		box-shadow: 0 0 18px #000;
+	}
+
+	#menu a {
+		margin: -5px;
+		width: 100%;
+		color: #fff;
+		font-weight: bold;
+	}
+
+	#menu a:hover {
+		color: #000;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	body {
+		color: red;
+	}
+	
+	/*Cabeçalho*/
+	#cabecalho h1 {
+		/*font-size: 0.4em;*/
+	}
+
+	/*configurando blocos*/
+	.bloco4 {
+		width: 99%;
+	}
+
+}
+
+@media screen and (min-width: 480px) and (max-width: 640px) {
+	body {
+		color: red;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	body {
+		color: blue;
+	}	
 }
