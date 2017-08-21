@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 @import url("../css/gridclear.css");
+@import url("../css/responsivo.css");
 
 /*RESET*/
 * {
@@ -15,14 +16,25 @@ body {
 	background-color: #fff;
 }
 
-/*Cabeçalho*/
+/*Scrollbar*/
+::-webkit-scrollbar-track {
+    background-color: #ccc;
+}
+::-webkit-scrollbar {
+    width: 14px;
+    background: #000;
+}
+::-webkit-scrollbar-thumb {
+    background: #000;
+}
+
+/*Cabecalho*/
 #cabecalho {
 	display: block;
 	width: 100%;
 	height: 10%;
 	background-color: #000;
 	color: #ccc;
-	font-size: 4em;
 	text-transform: uppercase;
 	overflow: hidden;
 }
@@ -33,9 +45,7 @@ body {
 
 #cabecalho h1 {
 	display: inline;
-	margin: 20px 0 0 140px;
-	cursor: pointer;
-	transition: text-shadow 0.6s;
+	cursor: pointer;	
 	letter-spacing: 5px;
 	font-family: 'Montserrat', sans-serif;
 	font-family: 'Oswald', sans-serif;
@@ -44,39 +54,18 @@ body {
 	font-family: 'Roboto Slab', serif;
 }
 
-#cabecalho img {
-	display: block;
-	position: absolute;
-	top: 10px;
-	left: 40px;
-	/*box-shadow: 0 0 20px #ccc;*/
-	/*transition: display 1s;*/
-}
-
-/*#cabecalho h1:hover img {
-	display: block;
-}
-*/
 /*Conteudo*/
 #conteudo {
-	height: 90%;
 	display: block;
-	/*background-color: #c3c3c3;*/
-	padding: 10px;
 	box-sizing: border-box;
 }
 
 #conteudo div {
-	height: 40px;
 	text-align: center;
-	/*background-color: black;*/
 }
 
 #conteudo div h2 {
 	font-family: 'Patua One', cursive, Sans-serif;
-	letter-spacing: 3px;
-	font-size: 1.6em;
-	margin-top: -20px;
 }
 
 #conteudo article {
@@ -94,126 +83,176 @@ body {
 	height: 100%;
 }
 
-/*Imagens do conteúdo*/
-figure {
-	position: relative;
-}
+@media screen and (min-width: 1270px) {
+	/*Cabeçalho*/
+	#cabecalho {
+		font-size: 4em;
+	}
 
-figcaption h3 {
-	text-align: center;
-	font-size: 1.2em;
-	border-bottom: 2px dotted #ccc;
-}
+	#cabecalho h1 {
+		letter-spacing: 5px;
+		margin: 20px 0 0 140px;
+	}
 
-figcaption h5 {
-	font-size: 1em;
-	margin-top: 15px;
-}
+	#cabecalho img {
+		display: block;
+		position: absolute;
+		top: 10px;
+		left: 40px;
+	}
 
-#capa01 figcaption, 
-#capa02 figcaption, 
-#capa03 figcaption, 
-#capa04 figcaption, 
-#capa05 figcaption, 
-#capa06 figcaption {
-	/*display: none;*/
-	opacity: 0;
-	position: absolute;
-	top: 0;
-	background-color: rgba(0,0,0,0.8);
-	color: #fff;
-	width: 100%;
-	height: 100%;
-	padding: 10px;
-	box-sizing: border-box;
-	transition: opacity: 0.6s;
-	font-family: Arial, Sans-serif;
-	overflow: auto;
-}
+	/*Conteudo*/
+	#conteudo {
+		height: 90%;
+		padding: 10px;
+	}
 
-#capa01:hover figcaption{
-	opacity: 1;
-}
+	#conteudo div {
+		height: 40px;
+	}
 
-#capa02:hover figcaption{
-	opacity: 1;
-}
-
-#capa03:hover figcaption{
-	opacity: 1;
-}
-
-#capa04:hover figcaption{
-	opacity: 1;
-}
-
-#capa05:hover figcaption{
-	opacity: 1;
-}
-
-#capa06:hover figcaption{
-	opacity: 1;
-}
+	#conteudo div h2 {
+		letter-spacing: 3px;
+		font-size: 1.6em;
+		margin-top: -20px;
+	}
 
 
-/*Menu Principal*/
-#div-menu {
-	position: relative;
-	display: block;
-	height: 60%;
-}
+	/*Seções do conteúdo*/
+	figure {
+		position: relative;
+	}
 
-#menu {
-	display: block;
-}
+	figcaption h3 {
+		text-align: center;
+		font-size: 1.2em;
+		border-bottom: 2px dotted #ccc;
+	}
 
-#menu h1 {
-	display: none
-}
+	figcaption h5 {
+		font-size: 1em;
+		margin-top: 15px;
+	}
 
-ul {
-	display: block;
-}
+	figcaption a {
+		display: block;
+		text-decoration: none;
+		font-size: 1.2em;
+		color: #ccc;
+		text-align: center;
+		padding-top: 10px;
+	}
 
-ul li {
-	background-color: #000;
-	display: block;
-	float: left;
-	height: 570px;
-	list-style: none;
-	padding: 20px 5px 20px;
-	margin-left: 5px;
-	margin-top: -8px;
-	margin-bottom: -9px;
-	cursor: pointer;
-	
-	font-family: 'Patua One', cursive, Sans-serif;
-	text-align: center;
-	text-decoration: none;
-	text-transform: uppercase;
-	letter-spacing: 5px;
-	/*font-weight: bold;*/
-	font-size: 1.2em;
-	color: #fff;
+	figcaption a:hover {
+		color: #fff;
+		text-decoration: underline;
+	}
 
-	writing-mode: tb-rl;
-	transition: box-shadow 0.6s;
-}
+	#capa01 figcaption, 
+	#capa02 figcaption, 
+	#capa03 figcaption, 
+	#capa04 figcaption, 
+	#capa05 figcaption, 
+	#capa06 figcaption {
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		background-color: rgba(0,0,0,0.8);
+		color: #fff;
+		width: 100%;
+		height: 100%;
+		padding: 10px;
+		box-sizing: border-box;
+		transition: opacity: 0.6s;
+		font-family: Arial, Sans-serif;
+		overflow: auto;
+		text-align: justify;
 
-ul li:hover {
-	background-color: #ccc;
-	color: #000;
-	box-shadow: 0 0 18px #000;
+		transition: opacity 0.6s;
+	}
 
-	transform: rotate(180deg);
-	-ms-transform: rotate(180deg);
-	-moz-transform: rotate(180deg);
-	-webkit-transform: rotate(180deg);
+	#capa01:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa02:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa03:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa04:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa05:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa06:hover figcaption{
+		opacity: 1;
+	}
+
+
+	/*Menu Principal*/
+	#div-menu {
+		position: relative;
+		display: block;
+		height: 60%;
+	}
+
+	#menu {
+		display: block;
+	}
+
+	#menu h1 {
+		display: none
+	}
+
+	ul {
+		display: block;
+	}
+
+	ul li {
+		background-color: #000;
+		display: block;
+		float: left;
+		height: 570px;
+		list-style: none;
+		padding: 20px 5px 20px;
+		margin-left: 5px;
+		margin-top: -8px;
+		margin-bottom: -10px;
+		cursor: pointer;
+		
+		font-family: 'Patua One', cursive, Sans-serif;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+		letter-spacing: 5px;
+		font-size: 1.2em;
+		color: #fff;
+
+		writing-mode: tb-rl;
+		transition: box-shadow 0.6s;
+	}
+
+	ul li:hover {
+		background-color: #ccc;
+		color: #000;
+		box-shadow: 0 0 18px #000;
+
+		transform: rotate(180deg);
+		-ms-transform: rotate(180deg);
+		-moz-transform: rotate(180deg);
+		-webkit-transform: rotate(180deg);
+	}
 }
 
 /*Rodapé*/
 footer {
-	border-top: 2px solid #cdcdcd;
 	width: 100%;
 	height: 100px;
 	background-color: #000;
