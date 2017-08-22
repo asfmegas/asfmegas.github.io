@@ -41,7 +41,6 @@
 		letter-spacing: 3px;
 		font-size: 1.2em;
 		margin: -30px 0 0 0;
-		/*text-align: left;*/
 	}
 
 	/*Seções do conteúdo*/
@@ -74,25 +73,28 @@
 		text-decoration: underline;
 	}
 
+	.oculto {
+		background-color: red;
+		display: none;
+	}
+
 	#capa01 figcaption, 
-	#capa02 figcaption, 
+	#capa02 figcaption,
 	#capa03 figcaption, 
 	#capa04 figcaption, 
 	#capa05 figcaption, 
 	#capa06 figcaption {
-		opacity: 0;
-		position: absolute;
-		top: 0;
-		background-color: rgba(0,0,0,0.8);
+		background-color: rgba(0,0,0,1);
 		color: #fff;
 		width: 100%;
-		height: 100%;
+		min-height: 250px;
 		padding: 10px;
 		box-sizing: border-box;
 		transition: opacity: 0.6s;
 		font-family: Arial, Sans-serif;
 		overflow: auto;
 		text-align: justify;
+		border-bottom: 10px groove #fff;
 
 		transition: opacity 0.6s;
 	}
@@ -124,10 +126,6 @@
 	/*Alterando blocos*/
 	.bloco10 {
 		width: 99%;
-	}
-
-	.bloco4 {
-		width: 49%;
 	}
 
 	/*Menu Principal*/
@@ -177,9 +175,6 @@
 	}
 }
 
-/***************************************************************
-	Screen 780 pixes
-***************************************************************/
 @media screen and (min-width: 765px) and (max-width: 880px) {
 	/***************************************************************
 		Formatação Cabeçalho
@@ -257,19 +252,17 @@
 	#capa04 figcaption, 
 	#capa05 figcaption, 
 	#capa06 figcaption {
-		opacity: 0;
-		position: absolute;
-		top: 0;
-		background-color: rgba(0,0,0,0.8);
+		background-color: rgba(0,0,0,1);
 		color: #fff;
 		width: 100%;
-		height: 100%;
+		height: 250px;
 		padding: 10px;
 		box-sizing: border-box;
 		transition: opacity: 0.6s;
 		font-family: Arial, Sans-serif;
 		overflow: auto;
 		text-align: justify;
+		border-bottom: 10px groove #fff;
 
 		transition: opacity 0.6s;
 	}
@@ -354,24 +347,7 @@
 	}
 }	
 
-
-	/***************************************************************
-
-	***************************************************************/
-	/***************************************************************
-
-	***************************************************************/
-	/***************************************************************
-
-	***************************************************************/
-	/***************************************************************
-
-	***************************************************************/
-	/***************************************************************
-
-	***************************************************************/
-
-@media screen and (min-width: 640px) and (max-width: 765px) {
+@media screen and (min-width: 700px) and (max-width: 765px) {
 	/***************************************************************
 		Formatação Cabeçalho
 	***************************************************************/
@@ -448,19 +424,17 @@
 	#capa04 figcaption, 
 	#capa05 figcaption, 
 	#capa06 figcaption {
-		opacity: 0;
-		position: absolute;
-		top: 0;
-		background-color: rgba(0,0,0,0.8);
+		background-color: rgba(0,0,0,1);
 		color: #fff;
 		width: 100%;
-		height: 100%;
+		height: 250px;
 		padding: 10px;
 		box-sizing: border-box;
 		transition: opacity: 0.6s;
 		font-family: Arial, Sans-serif;
 		overflow: auto;
 		text-align: justify;
+		border-bottom: 10px groove #fff;
 
 		transition: opacity 0.6s;
 	}
@@ -495,7 +469,11 @@
 	}
 
 	.bloco4 {
-		width: 49%;
+		width: 99%;
+	}
+
+	.oculto {
+		display: none;
 	}
 
 	/*Menu Principal*/
@@ -504,8 +482,8 @@
 		position: absolute;
 		float: left;
 		top: 80px;
-		left: 15%;
-		width: 70%;
+		left: 10%;
+		width: 80%;
 	}
 
 	#menu {
@@ -523,8 +501,10 @@
 	#menu ul li {
 		list-style: none;
 		display: inline-block;
-		padding: 5px 10px;
+		padding: 5px 20px;
 		margin-left: : -5px;
+		background-color: #000;
+		border-left: 1px solid #fff;
 	}
 
 	#menu ul li:hover {
@@ -545,31 +525,541 @@
 	}
 }
 
-@media screen and (max-width: 480px) {
-	body {
-		color: red;
-	}
-	
-	/*Cabeçalho*/
-	#cabecalho h1 {
-		/*font-size: 0.4em;*/
+@media screen and (min-width: 480px) and (max-width: 700px) {
+	/***************************************************************
+		Formatação Cabeçalho
+	***************************************************************/
+	#cabecalho {
+		font-size: 2em;
+		text-align: center;
 	}
 
-	/*configurando blocos*/
+	#cabecalho h1 {
+		display: block;
+		width: 100%;
+		width: 600px;
+		letter-spacing: 3px;
+	}
+
+	#cabecalho img {
+		display: none;
+	}
+
+	/***************************************************************
+		Formatação conteúdo
+	***************************************************************/
+	/*Conteudo*/
+	#conteudo {
+		height: 100%;
+		padding: 10px;
+		margin-top: 220px;
+	}
+
+	#conteudo div {
+		height: 40px;
+	}
+
+	#conteudo div h2 {
+		letter-spacing: 3px;
+		font-size: 1.2em;
+	}
+
+	/*Seções do conteúdo*/
+	figure {
+		position: relative;
+	}
+
+	figcaption h3 {
+		text-align: center;
+		font-size: 1.4em;
+		border-bottom: 2px dotted #ccc;
+	}
+
+	figcaption h5 {
+		font-size: 1em;
+		margin-top: 10px;
+	}
+
+	figcaption a {
+		display: block;
+		text-decoration: none;
+		font-size: 1.4em;
+		color: #ccc;
+		text-align: center;
+		padding-top: 10px;
+	}
+
+	figcaption a:hover {
+		color: #fff;
+		text-decoration: underline;
+	}
+
+	#capa01 figcaption, 
+	#capa02 figcaption, 
+	#capa03 figcaption, 
+	#capa04 figcaption, 
+	#capa05 figcaption, 
+	#capa06 figcaption {
+		background-color: rgba(0,0,0,1);
+		color: #fff;
+		width: 100%;
+		height: 250px;
+		padding: 10px;
+		box-sizing: border-box;
+		transition: opacity: 0.6s;
+		font-family: Arial, Sans-serif;
+		overflow: auto;
+		text-align: justify;
+		border-bottom: 10px groove #fff;
+
+		transition: opacity 0.6s;
+	}
+
+	#capa01:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa02:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa03:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa04:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa05:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa06:hover figcaption{
+		opacity: 1;
+	}
+
+	/*Alterando blocos*/
+	.bloco10 {
+		width: 99%;
+	}
+
 	.bloco4 {
 		width: 99%;
 	}
 
-}
+	.oculto {
+		display: none;
+	}
 
-@media screen and (min-width: 480px) and (max-width: 640px) {
-	body {
-		color: red;
+	/*Menu Principal*/
+	#div-menu {
+		position: absolute;
+		float: left;
+		top: 50px;
+		left: 0%;
+		width: 99%;
+	}
+
+	#menu {
+		display: block;
+	}
+
+	#menu h1 {
+		display: none;
+	}
+
+	#menu ul {
+		display: block;
+	}
+
+	#menu ul li {
+		list-style: none;
+		display: block;
+		padding: 10px;
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 3px;
+		background-color: #000;
+		border-top: 1px solid #fff;
+	}
+
+	#menu ul li:hover {
+		background-color: #ccc;
+		color: #000;
+		box-shadow: 0 0 18px #000;
+	}
+
+	#menu a {
+		width: 100%;
+		color: #fff;
+		font-weight: bold;
+	}
+
+	#menu a:hover {
+		color: #000;
 	}
 }
 
-@media screen and (max-width: 480px) {
-	body {
-		color: blue;
-	}	
+@media screen and (min-width: 280px) and (max-width: 480px) {
+	/***************************************************************
+		Formatação Cabeçalho
+	***************************************************************/
+	#cabecalho {
+		font-size: 1.6em;
+		text-align: center;
+		padding: 8px 0;
+	}
+
+	#cabecalho h1 {
+		display: block;
+		width: 100%;
+		width: 600px;
+		letter-spacing: 3px;
+	}
+
+	#cabecalho img {
+		display: none;
+	}
+
+	/***************************************************************
+		Formatação conteúdo
+	***************************************************************/
+	/*Conteudo*/
+	#conteudo {
+		height: 100%;
+		padding: 10px;
+		margin-top: 220px;
+	}
+
+	#conteudo div {
+		height: 40px;
+	}
+
+	#conteudo div h2 {
+		letter-spacing: 3px;
+		font-size: 1.2em;
+	}
+
+	section div {
+		padding-bottom: 20px;
+	}
+
+	/*Seções do conteúdo*/
+	figure {
+		position: relative;
+	}
+
+	figcaption h3 {
+		text-align: center;
+		font-size: 1.4em;
+		border-bottom: 2px dotted #ccc;
+	}
+
+	figcaption h5 {
+		font-size: 1em;
+		margin-top: 10px;
+	}
+
+	figcaption a {
+		display: block;
+		text-decoration: none;
+		font-size: 1.4em;
+		color: #ccc;
+		text-align: center;
+		padding-top: 10px;
+	}
+
+	figcaption a:hover {
+		color: #fff;
+		text-decoration: underline;
+	}
+
+	#capa01 figcaption, 
+	#capa02 figcaption, 
+	#capa03 figcaption, 
+	#capa04 figcaption, 
+	#capa05 figcaption, 
+	#capa06 figcaption {
+		background-color: rgba(0,0,0,1);
+		color: #fff;
+		width: 100%;
+		height: 250px;
+		padding: 10px;
+		box-sizing: border-box;
+		transition: opacity: 0.6s;
+		font-family: Arial, Sans-serif;
+		overflow: auto;
+		text-align: justify;
+		border-bottom: 10px groove #fff;
+
+		transition: opacity 0.6s;
+	}
+
+	#capa01:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa02:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa03:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa04:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa05:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa06:hover figcaption{
+		opacity: 1;
+	}
+
+	/*Alterando blocos*/
+	.bloco10 {
+		width: 99%;
+	}
+
+	.bloco4 {
+		width: 99%;
+	}
+
+	.oculto {
+		display: none;
+	}
+
+	/*Menu Principal*/
+	#div-menu {
+		position: absolute;
+		float: left;
+		top: 50px;
+		left: 0%;
+		width: 99%;
+	}
+
+	#menu {
+		display: block;
+	}
+
+	#menu h1 {
+		display: none;
+	}
+
+	#menu ul {
+		display: block;
+	}
+
+	#menu ul li {
+		list-style: none;
+		display: block;
+		padding: 10px;
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 3px;
+		background-color: #000;
+		border-top: 1px solid #fff;
+	}
+
+	#menu ul li:hover {
+		background-color: #ccc;
+		color: #000;
+		box-shadow: 0 0 18px #000;
+	}
+
+	#menu a {
+		width: 100%;
+		color: #fff;
+		font-weight: bold;
+	}
+
+	#menu a:hover {
+		color: #000;
+	}
+}
+
+@media screen and (max-width: 280px) {
+	/***************************************************************
+		Formatação Cabeçalho
+	***************************************************************/
+	#cabecalho {
+		z-index: 5;
+		position: fixed;
+		font-size: 1em;
+		text-align: center;
+	}
+
+	#cabecalho h1 {
+		display: block;
+		width: 100%;
+		letter-spacing: 3px;
+	}
+
+	#cabecalho img {
+		display: none;
+	}
+
+	/***************************************************************
+		Formatação conteúdo
+	***************************************************************/
+	/*Conteudo*/
+	#conteudo {
+		height: 100%;
+		padding: 10px;
+		margin-top: 260px;
+/*		box-sizing: border-box;*/
+	}
+
+	#conteudo div {
+		height: 40px;
+	}
+
+	#conteudo div h2 {
+		letter-spacing: 1px;
+		font-size: 0.8em;
+	}
+
+	section div {
+		padding-bottom: 20px;
+	}
+
+	/*Seções do conteúdo*/
+	figure {
+		position: relative;
+	}
+
+	figcaption h3 {
+		text-align: center;
+		font-size: 1em;
+		border-bottom: 2px dotted #ccc;
+	}
+
+	figcaption h5 {
+		font-size: 0.8em;
+		margin-top: 10px;
+	}
+
+	figcaption a {
+		display: block;
+		text-decoration: none;
+		font-size: 1em;
+		color: #ccc;
+		text-align: center;
+		padding-top: 10px;
+	}
+
+	figcaption a:hover {
+		color: #fff;
+		text-decoration: underline;
+	}
+
+	#capa01 figcaption, 
+	#capa02 figcaption, 
+	#capa03 figcaption, 
+	#capa04 figcaption, 
+	#capa05 figcaption, 
+	#capa06 figcaption {
+		background-color: rgba(0,0,0,1);
+		color: #fff;
+		width: 100%;
+		height: 250px;
+		padding: 10px;
+		box-sizing: border-box;
+		transition: opacity: 0.6s;
+		font-family: Arial, Sans-serif;
+		overflow: auto;
+		text-align: justify;
+		border-bottom: 10px groove #fff;
+
+		transition: opacity 0.6s;
+	}
+
+	#capa01:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa02:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa03:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa04:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa05:hover figcaption{
+		opacity: 1;
+	}
+
+	#capa06:hover figcaption{
+		opacity: 1;
+	}
+
+	/*Alterando blocos*/
+	.bloco10 {
+		width: 99%;
+	}
+
+	.bloco4 {
+		width: 99%;
+	}
+
+	.oculto {
+		display: none;
+	}
+
+	/*Menu Principal*/
+	#div-menu {
+		position: absolute;
+		float: left;
+		top: 50px;
+		left: 0%;
+		width: 99%;
+	}
+
+	#menu {
+		display: block;
+	}
+
+	#menu h1 {
+		display: none;
+	}
+
+	#menu ul {
+		display: block;
+	}
+
+	#menu ul li {
+		list-style: none;
+		display: block;
+		padding: 10px;
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 3px;
+		background-color: #000;
+		border-top: 1px solid #fff;
+	}
+
+	#menu ul li:hover {
+		background-color: #ccc;
+		color: #000;
+		box-shadow: 0 0 18px #000;
+	}
+
+	#menu a {
+		width: 100%;
+		color: #fff;
+		font-weight: bold;
+	}
+
+	#menu a:hover {
+		color: #000;
+	}
 }
