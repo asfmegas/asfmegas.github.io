@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@media screen and (min-width: 300px) and (max-width: 700px) {
+@media screen and (min-width: 350px) and (max-width: 700px) {
 	/*Cabeçalho*/
 	#cabecalho {
 		height: 50px;
@@ -93,7 +93,7 @@
 	}
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 350px) {
 	/*Cabeçalho*/
 	#cabecalho {
 		height: 40px;
