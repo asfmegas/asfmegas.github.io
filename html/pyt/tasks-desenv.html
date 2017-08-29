@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" href="../../css/style-frame.css">
+</head>
+<body>
+<section id="desenv" class="bloco bloco12 limpa">
+	<article>
+		<div class="limpa">
+			<h1>Segunda etapa - Desenvolvimento</h1>
+			<h3>Início do Desenvolvimento</h3>
+			<p>Para começar a implementação do sistema, primeiro criei o arquivo database para a manipulação dos dados.</p>
+
+			<p>Neste projeto não utilizei nenhum sistema de banco de dados. Os dados de cada serviço criado são salvos em arquivos de texto separados no formato JSON. Como mostra a imagem a seguir.</p>
+			<img class="bordas" src="../../img/python/dados-serviço-min.png" alt="Figura 01 - database" title="Figura 01 - database">
+			
+			<hr/>
+			<p>A figura abaixo mostra as funções que criei para realizar a persistência dos dados dos serviços em disco. Basicamente, o que temos são duas funções que retornam dados, uma que exclui, e outra para salvá-los.</p>
+			<img class="bloco bloco12" src="../../img/python/db-service-min.png" alt="Figura 02 - database" title="Figura 02 - database">
+			
+			<hr/>
+			<p>A próxima figura mostra o código que realiza a persistência e a busca dos dados das configurações principais.</p>
+			<img class="bordas" src="../../img/python/db-setting-min.png" alt="Figura 03 - database" title="Figura 03 - database">
+			
+			<hr/>
+			<p>A imagem abaixo mostra uma função que é utilizada para armazenar os dados de registro do programa para checagem de serviços.</p>
+			<img class="bordas" src="../../img/python/db-log-min.png" alt="Figura 04 - database" title="Figura 04 - database">
+		</div>
+		<hr/>
+		<div class="limpa">
+			<p>Após criar o "banco de dados", o próximo passo foi desenvolver a interface para o gerenciamento dos dados dos serviços.</p>
+
+			<p>Abaixo é possível ver o menu principal, com as opções básicas que o programa oferece.</p>
+			<img class="bordas" src="../../img/python/inter-menu-min.png" alt="Figura 01 - interface" title="Figura 01 - interface">
+			
+			<hr/>
+			<p>Os parâmetros para se criar um novo serviço são mostrados na figura abaixo. Neste exemplo está sendo criado um serviço que rodará todos os 10 minutos, às 14 horas, de todos os dias e todos os meses de forma infinita determinado pelo parâmetro -1 definida na entrada "Repeat".</p>
+
+			<img class="bordas" src="../../img/python/new-inter-min.png" alt="Figura 02 - interface" title="Figura 02 - interface">
+			<ul class="lista bordas">
+				<li>Primeiro definimos o nome do serviço;</li>
+				<li>Depois, o comando que será executado pelo programa;</li>
+				<li>Em seguida vem a notificação de quando o comando for executado;</li>
+				<li>A entrada "State" determina o estado do serviço, podendo está "running", "stop" ou "wait";</li>
+				<li>O modo que o serviço será executado, pode ser definido para se repetir uma quantidade de vez e parar, ou por data;</li>
+				<li>Os parâmetros do modo "repeat" são o tempo e quantidade de vezes que o serviço deve se repetir a cada intervalo de tempo definido;</li>
+				<li>Os parâmetros do modo "date" são o minuto, a hora, o dia, o mês e a quantidade de vezes que deve ser executada;</li>
+				<li>O parâmetro "Delete" determina a exclusão do serviço após cumprido sua execução.</li>
+			</ul>
+			
+			<hr/>
+			<p>Abaixo é mostrado uma lista com todos serviços criados em ordem alfabética.</p>
+			<img class="bloco bloco12" src="../../img/python/list02-inter-min.png" alt="Figura 03- interface" title="Figura 03- interface">
+			
+			<hr/>
+			<p>As duas figuras abaixo mostram a alteração de um serviço.</p>
+			<img class="bloco bloco12" src="../../img/python/update-inter-min.png" alt="Figura 04- interface" title="Figura 04- interface">
+			<img class="bloco bloco12" src="../../img/python/list-inter-min.png" alt="Figura 05- interface" title="Figura 05 - interface">
+			
+			<hr/>
+			<p>Agora temos a exclusão de um serviço, que pode ser visto na imgem abaixo.</p>
+			<img class="bordas" src="../../img/python/delete-inter-min.png" alt="Figura 06- interface" title="Figura 06 - interface">
+			
+			<hr/>
+			<p>Na última imagem desta seção, temos as configurações principais, que basicamente são o tempo do ciclo da função "main" e seu estado.</p>
+			<img class="bordas" src="../../img/python/setting-inter-min.png" alt="Figura 07- interface" title="Figura 07- interface">
+		</div>
+		<hr/>
+		<div class="limpa">
+			<p>Concluída a interface, o próximo passo é criar a função "main", que ficará responsável por iniciar os serviços e será o coração do programa.</p>
+
+			<p>Minha intenção nã é detalhar o código, apenas descrever pontos principais. Dito isso, logo abaixo vemos o inicio da função "mian", ela cria uma instância do database e obtêm seu PID para registro. Também é possível ver que ela cria uma lista com os dados da data a qual ela iniciou sua execução.</p>
+			<img class="bordas" src="../../img/python/img-main01-min.png" alt="Função Main 01" title="Função Main 01">
+			
+			<hr/>
+			<p>A função "main" acessa os dados dos serviços e verifica seu estado. Se estive em estado de "stop" o serviço é armazenado na lista de serviços parados e não é executado. Caso esteja no estado "runinng" ele é armazenado na lista de serviços ativos e é executado.</p>
+			<img class="bloco bloco12" src="../../img/python/img-main02-min.png" alt="Função Main 02" title="Função Main 02">
+			
+			<hr/>
+			<p>Na imagem abaido, na linha 106 é mostrada a linha que cria os serviços em threads. Responsável pela independência de cada serviço.</p>
+			<img class="bloco bloco12" src="../../img/python/img-main03-min.png" alt="Função Main 02" title="Função Main 02">
+		</div>
+		<hr/>
+		<div class="limpa">
+			<p>Com "main" já rodando. Chega a hora de implementar o serviço.</p>
+
+			<p>Como os serviços são independentes, cada qual é responsável por verificar seus dados. Assim, cada serviço fica responsável por gerir seus dados e verificar se há alguma alteração nos mesmos.</p>
+			<img src="../../img/python/serv01-min.png" alt="Serviço 01" title="Serviço 01">
+			<img src="../../img/python/serv02-min.png" alt="Serviço 02" title="Serviço 02">
+		</div>
+	</article>
+</section>
+</body>
+</html>

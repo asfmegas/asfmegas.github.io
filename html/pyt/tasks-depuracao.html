@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" href="../../css/style-frame.css">
+</head>
+<body>
+<section id="depuracao" class="bloco bloco12 limpa">
+	<article>
+		<div class="limpa">
+			<h1>Terceira etapa - Depuração</h1>
+			<h3>Um pouco de depuração</h3>
+			<p>A depuração é uma das partes essenciais na criação de um programa. Embora, eu realize testes continuamente no desenvolvimento de cada parte do programa, chega um momento que é preciso depurar todas as partes juntas.</p>
+
+			<p>A imagem abaixo mostra a execução de um serviço. O serviço foi criado em modo de repetição, definido um tempo de intervalo de 1 minuto para ele ser executado, repetindo-se 4 vezes e então é alterado o seu estado para "stop".</p>
+			<img class="bloco bloco12" src="../../img/python/debug01-min.png" alt="Figura 01 - Depuração" title="Figura 01 - Depuração"/>
+			
+			<hr/>
+			<p>Nesta outra imagem que segue abaixo, temos um novo serviço que foi alterado e agora está em modo "date", para ele foi definido que o comando seria executado infinitamente aos 18 minutos de todas as horas.</p>
+			<img class="bloco bloco12" src="../../img/python/debug02-min.png" alt="Figura 02 - Depuração" title="Figura 02 - Depuração"/>
+			
+			<hr/>
+			<p>A próxima imagem mostra que o serviço está em estado "date", programado para executar seu comando em todos os minutos, de todas as horas. Verifique que foi definido um número máximo de repetições para esse serviço. Quando ele atingir 5 execuções ele mudará seu 'State" de "running" para "wait", e ficará em estado de espera, que só voltará a se repetir se o programa for novalmente executado ou se houver mudança da data da qual ele iniciou sua execução.</p>
+			<img class="bloco bloco12" src="../../img/python/debug03-min.png" alt="Figura 03 - Depuração" title="Figura 03 - Depuração"/>
+			
+			<hr/>
+			<p>Por fim, temos abaixo uma imagem que mostra as ações dos serviços, desde seu início, até suas execuções, paradas, esperas etc.</p>
+
+			<p>Note que é possível verificar a exclusão de um serviço que foi removido porque tinha sido definido em "Delete" o valor "yes" ao qual apaga o arquivo após ele cumprir o ciclo a que ele foi determinado.</p>
+			<img src="../../img/python/debug04-min.png" alt="Figura 04 - Depuração" title="Figura 04 - Depuração"/>
+		</div>
+	</article>
+</section>
+</body>
+</html>

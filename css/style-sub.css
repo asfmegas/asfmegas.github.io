@@ -102,9 +102,10 @@ body {
 	}
 
 	.lista-menu li ul li a {
+		font-size: 1em;
 		box-shadow: 2px 2px 4px #000;
 		display: block;
-		width: 150px;
+		width: 200px;
 		text-transform: uppercase;
 		background-color: #fff;
 		color: #000;

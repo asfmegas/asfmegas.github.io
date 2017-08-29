@@ -62,6 +62,7 @@
 	}
 
 	.lista-menu li:hover ul {
+	/*.lista-menu li:over ul {*/
 		display: block;
 	}
 
