@@ -397,6 +397,24 @@ form .row:first-child .floating-label-form-group {
   color: #000;
 }
 
+#about h3 {
+  display: block;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+#about p {
+  text-indent: 60px;
+  text-align: justify;
+}
+
+#about p.def {
+  text-indent: 0;
+  text-align: left;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
 #about ul.sobre a {
   text-decoration: none;
   color: black;
