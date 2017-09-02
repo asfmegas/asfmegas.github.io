@@ -18,7 +18,6 @@ a.active,
 a:active,
 a:focus,
 a:hover {
-  /*color: #18BC9C;*/
   color: #ccc;
   outline: none; }
 
@@ -81,7 +80,8 @@ section {
     margin: 0; }
 
 /*Frame responsivo*/
-iframe {  
+iframe {
+  margin-bottom: 20px;
   height: 56.25vw;
   width: 100%; }
 
@@ -132,7 +132,7 @@ section.success {
   text-transform: uppercase;
   border: none;
   /*Cor de fundo da barra de menu*/
-  background: #000; }
+  background: rgba(0,0,0,1) }
   #mainNav a:focus {
     outline: none; }
   #mainNav .navbar-brand {
@@ -192,11 +192,8 @@ header.masthead {
   padding-bottom: 50px;
   text-align: center;
   /*Cor do texto*/
-  /*color: white;*/
   color: black;
-  /*background-image: url("../img/portfolio/intro-sada.png"); }*/
   /*Cor de fundo cabeçalho*/
-  /*background: #18BC9C; }*/
   background: #fff; }
   header.masthead img {
     display: block;
@@ -244,7 +241,6 @@ header.masthead {
       transition: all ease 0.5s;
       opacity: 0;
       background: rgba(51, 51, 51, 0.8); }
-      /*background: rgba(24, 188, 156, 0.9); }*/
       #portfolio .portfolio-item .portfolio-link .caption:hover {
         opacity: 1; }
       #portfolio .portfolio-item .portfolio-link .caption .caption-content {
@@ -286,7 +282,6 @@ header.masthead {
   -webkit-box-shadow: none;
   box-shadow: none; }
   .portfolio-modal .modal-dialog .modal-content {
-    /*background: rgba(0,0,0,0.8);*/
     background-color: black;
     padding: 100px 0;
     border: 0;
@@ -323,7 +318,6 @@ header.masthead {
   cursor: pointer;
   text-decoration: center;
   background-color: #818181; }
-  /*background-color: transparent; }*/
   .portfolio-modal .close-modal:hover {
     opacity: 0.4; }
   .portfolio-modal .close-modal .lr {
@@ -403,26 +397,43 @@ form .row:first-child .floating-label-form-group {
   color: #000;
 }
 
+#about ul.sobre a {
+  text-decoration: none;
+  color: black;
+}
+
+#about ul.sobre a:hover {
+  color: #ccc;
+}
+
 #contact {
   background-color: black;
   color: white;
 }
 
 footer {
-  color: white; }
-  footer h3 {
-    margin-bottom: 30px; }
-  footer .footer-above {
-    padding-top: 50px;
-    /*Cor rodape 1*/
-    /*background-color: #2C3E50; }*/
-    background-color: #212121; }
-  footer .footer-col {
-    margin-bottom: 50px; }
-  footer .footer-below {
-    padding: 25px 0;
-    /*Cor rodapé copyright*/
-    background-color: #111111; }
+  color: white; 
+  height: 700px;
+  background-color: #212121; }
+
+@media (max-width: 768px) {
+  footer {
+    height: 0;
+  }
+}
+
+footer h3 {
+  margin-bottom: 30px; }
+footer .footer-above {
+  padding-top: 50px;
+  /*Cor rodape 1*/
+  background-color: #212121; }
+footer .footer-col {
+  margin-bottom: 50px; }
+footer .footer-below {
+  padding: 25px 0;
+  /*Cor rodapé copyright*/
+  background-color: #111111; }
 
 footer img.img-footer {
   margin: 0 20px;
