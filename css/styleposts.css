@@ -1,0 +1,18 @@
+body{
+	padding: 0;
+	margin: 0;
+}
+
+section div.mystyle{
+	background: black;
+	color: #ccc;
+	font-size: 18px;
+}
+
+h1, 
+h2, 
+h3,
+h4,
+h5{
+	text-align: center;
+}

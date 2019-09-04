@@ -33,6 +33,26 @@ a:hover {
   color: #ccc;
   outline: none; }
 
+li.newlink{
+  background-color: rgba(0,0,0,0.4);
+  margin: 2px;
+  padding-left: 15px;
+  font-size: 25px;
+}
+
+li.newlink:hover{
+  background-color: rgba(0,0,0,0.8);
+}
+
+td.st{
+  font-size: 20px;
+  padding: 10px;
+}
+
+td.st:hover{
+  background: #0B3136;
+}
+
 h1,
 h2,
 h3,
@@ -121,6 +141,15 @@ img.img-footer {
 section.success {
   color: white;
   background: #18BC9C; }
+
+section.success-black {
+  color: white;
+  background: #000; }
+
+/*Cores da seção sobre*/
+section.noturno {
+  color: black;
+  background: #000; }
 
 @media (max-width: 767px) {
   section {

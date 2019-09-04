@@ -1,0 +1,520 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="Portfolio, Alexsandro Façanha, programação, desenvolvimento">
+		<meta name="author" content="">
+		<title>Conceitos do Shell Script</title>
+		<link rel="shortcut icon" href="favicon.png">	
+
+
+		<link rel="stylesheet" href="css/styleposts.css">
+	</head>
+	<body>
+
+<section>
+	<div class=mystyle>
+		<PRE>
+		<h3>Shell Script é um interpretador de comandos que fica entre o usuário e kernel linux.</h3>
+	<hr />
+
+	Verificar qual é o shell padrão
+	$ echo $SHELL
+	ou 
+	$ printenv SHELL
+
+	Verificar quais os shells disponíveis para o sistema
+	$ cat /etc/shells
+
+	[[ Comentário em linha ]]
+
+	# comentário aqui
+
+	[[ Comentário em bloco ]]
+
+	:<<'nome_comentário'
+	comentário
+	'nome_comentário'
+
+
+	[[ Variáveis ]]
+
+	 $ var1=valor  --> cria uma variável local
+	 $ export var1   --> torna a variável global
+	 $ unset var1    --> apaga a variável
+	 $ echo     --> exibe o valor da variável
+
+	[[ Contante ]]
+
+	 Para se declarar uma constante devemos fazer: 
+	 $ declare ­r nome_da_constante='valor'
+	 $ declare ­r CONSTANTE='sempre igual'
+
+
+	[[ Variáveis especiais ]]
+
+	 A variável $# especial contém o número de parâmentros.
+	 A variável $? guarda o valor da execução do último comando.
+
+
+	[[ Expansão de variável em Shell ]]
+
+	$(comando)
+	ou
+	${comando}
+
+	ex.: echo t{r,igr,rist}es
+
+
+	[[ Constante ]]
+
+	declare -r CONST5ANTE="valor da constante"
+
+	[[ Apagamdo uma variável ou uma constante ]]
+
+	unset variável
+	unset CONSTANTE
+
+
+	[[  Arrays de ambiente ]]
+
+	 $ varArray=("uva" "pera" "maca" "caja") --> criando um array
+	 $ echo ${varArray[1]} --> visualizar valor da posição 1 do array
+	 $ echo ${varArray[*]} --> exibe todos os elementos do array
+	 $ unset varArray[1] --> excluir o valor da posição 1 do array
+	 $ unset varArray[*] --> excluir o array
+	 $ varArray[2]="melancia"  --> altera o valor da posição 2 por melancia
+	 $ echo ${#varArray[@]} --> contar quantos elementos o array possui
+	 $ echo ${varArray[@]:1} --> exibir apartir do segundo elemento
+	 $ echo ${varArray[@]:1:2} --> exibir os elementos entre a posição 1 e 2
+
+
+	[[ Script conceitos ]]
+
+	 A primeira linha de um script shell especifica qual shell será usado
+	 #!/bin/bash no caso o shell bash
+	 # é usado para comentários exceto na primeira linha com a combinação #! que indica
+	 ao shell que será executado um script
+
+	 [[ Uso da crase ]]
+
+	 A crase direciona a saída do comando para dentro de outro comando ou uma variável
+	 $ data=`%d%m%y%H%M` -> formata data/hora e envia a variável data
+
+
+	 [[ Cálculos matemáticos ]]
+
+	 $ var1=$[2 + 3]       -> realizou o cálculo e guardou em uma variável
+	 $ var2=$[$var1 * 2 ]  -> realiza cálculo com a var1
+
+	 
+	 [[ Status de saída ]]
+
+	 Varia entre 0 e 255
+	 $ echo $? -> exibe o último status de saída
+	 tabela:
+	 0   |   comando completado com sucesso
+	 1   |   erro geral desconhecido
+	 126 |   o comando não pode ser executado por erro de permissão
+	 127 |   comando não encontrado
+	 130 |   comando finalizado com C-c
+
+
+	 [[ comando exit ]]
+
+	 altera o resultado de retorno
+	 no script acrescenta "exit valor" e esse valor será retornado quando o script for finalizado
+
+
+	 [[ Operador test ]]
+
+	 $ test 1 = 1; echo $? --> saída: 0 (verdadeiro) 
+	 $ test 1 = 2; echo $? --> saída: 1 (falso)
+
+	 ler manual
+	 man text
+
+
+	 [[ Operadores ternários ]]
+
+	 [ "a" == "a" ] && echo "são iguais" || echo "não são iguais"
+
+	 [ $var -ne 1 ] && echo "Não é 1"
+
+	 test -w $file || echo "$file não é gravável"
+
+	Só executa o bloco se test for falso
+	 test -w $file || { echo "$file não é gravável"; exit 1; }
+	Só executa o bloco de comandos se a condição for verdadeira
+	 test -w $file || { echo "$file não é gravável"; exit 1; }
+
+	 test -w $file && echo "Se verdadeiro" || echo "Se falso"
+
+
+	 [[ Uso do comando if ]]
+
+	 sintaxe.: 
+	      if comando; then -> se o status do comando for 0 os comandos serão executados
+	         comandos
+	      fi
+	 ex.:
+	      if ls /etc; then
+	           echo "Lista ok"
+	      fi
+
+	 Comando test realiza uma comparação
+	 sintaxe:
+	      if test condição;
+	      then
+	          condições
+	      fi
+	  ou
+	      if [ condição ]; then
+	         condições
+	      fi
+
+	      Comparação numérica
+	        tabela ____________________________________
+	      |  -eq  |  verifica igualdade    
+	      |  -ge  |  verifica se é maior ou igual    
+	      |  -gt  |  verifica se é maior do que    
+	      |  -le  |  verifica se é menor ou igual    
+	      |  -lt  |  verifica se é menor do que    
+	      |  -ne  |  verifica se é diferente    
+
+	  ex.:
+	        if [ 1 -eq 2 ]; then
+	            echo "São iguais"
+	        else
+	            echo "Não são iguais"
+	        fi
+
+	      Comparação de string
+	       tabela ____________________________________
+	      |  =   |   verifica se são iguais
+	      |  !=  |   verifica se são diferentes
+	      |  <   |   verifica se é menor 
+	      |  >   |   verifica se é maior
+	      |  -n  |   verifica se a string não esta vazia (cheia true)
+	      |  -z  |   verifica se está vazia (true)
+
+	  ex.:
+	        if [ "a" = "b" ]; then
+	           echo "iguais"
+	        else
+	           echo "dif"
+	        fi
+
+	      Comparação de arquivos
+	        tabela ____________________________________
+	      |   -d  |  verifica se o arquivo existe e se é um diretório
+	      |   -e  |  verifica se o arquivo existe 
+	      |   -f  |  verifica se o arquivo existe e se é um arquivo 
+	      |   -r  |  verifica se o arquivo existe e se possui permissão de leitura
+	      |   -s  |  verifica se o arquivo existe e se não está vazio (se cheio retona 0 (true))
+	      |   -w  |  verifica se o arquivo existe e se possui permissãp de escrita 
+	      |   -x  |  verifica se o arquivo existe e se possui permissão de execução
+	      |   -O  |  verifica se o arquivo existe e se é propriedade o usuário atual 
+	      |   -G  |  verifica se o arquivo existe e se seu grupo padrão é o mesmo do usuário atual 
+	      |   arq1 -nq arq2   |  verifica se arq1 é mais novo que arq2 
+	      |   arq1 -ot arq2   |  verifica se arq1 é mais antigo que arq2
+
+		Teste de condições compostas usando and(&&) e or(||)
+		ex.:
+			if [ $USER = "asfmint" ] && [ -w $HOME/.bashrc ] ; then
+				echo "asfmint tem permissão de escrita"
+			else
+				echo "não é o usuário asfmint ou não possui permissão de escrita"
+			fi
+
+		Uso do case
+		sint.:
+			case variável in
+				valor1)
+					comando 1;;
+				valor2)
+					comando2;;
+				valor3 | valor4)
+					comando3;;
+				*)
+					comando padrão;;
+			esac
+
+
+		<hr />
+
+		Estruturas de repetição
+
+		[[ for ]]
+		
+		for valor in lista
+		do
+			bloco de comandos
+		done
+
+		for((atrib_var; condição; proc_iteração))
+		do
+			bloco de comandos
+		done	
+
+		ex.:	
+		$ for valor in *.txt ; do mv $valor $valor.log; done (no prompt)
+		$ for valor in `ls *.txt` ; do mv $valor $valor.log; done
+
+		for runlevel in 1 2 3 4 5 6 ; do
+			mkdir rc${runlevel}.d
+		done
+
+		for runlevel in $(cat dados.txt) ; do
+			mkdir rc${runlevel}.d
+		done
+
+		<hr />
+
+		[[ while ]]
+
+		while [ comando_teste ]
+		do
+			bloco de comandos
+		done
+
+		...
+
+		i=0
+		while ((i <= 10)); do
+			echo $i
+			((i++))
+		done
+
+		[[ Comando shift ]]
+		Desloca os parâmetros em suas posições relativas.
+
+		ex.:
+			i=1
+			while [ -n "$1" ] ; do
+				echo "Parâmetro $i tem o valor: $1"
+				i=$[$i+1]
+				shift
+			done
+		-------------------------------------------------
+			while [ -n "$1" ] ; do
+				case $1 in
+					-a)
+						echo "bloco de comandos A";;
+					-b)
+						echo "bloco de coomando B";;
+					-c)
+						echo "bloco de comandos C";;
+					*)
+						echo "Comando inválido";;
+				esac
+				shift
+			done
+		------------------------------------------------------
+		while getopts ab:cde OPCAO; do
+			case "${OPCAO}" in
+				a) recebi_a=1 ;;
+				b) argumento_b="${OPTARG}" ;;
+				c) recebi_c=1 ;;
+				d) recebi_d=1 ;;
+				e) recebi_e=1 ;;
+			esac
+		done
+		echo "Valor de OPTIND ao sair do getopts: $OPTIND"
+		todos_args=( $@ )
+		echo $todos_args
+		n_args=${#todos_args[@]}
+		echo $n_args
+		# Argumentos sem opções
+		for indice in `seq $((OPTIND-1)) $((n_args-1))`; do
+			echo "Argumento $indice: ${todos_args[$indice]}"
+		done
+		exit 0
+
+	<hr />
+
+		[[ Comando read ]]
+
+		Aceita entrada de dados da entrada padrão.
+		O comando read pode ser usado para ler dados armazenados em um arquivo no computador.
+		É lido uma linha por vez.
+		
+		ex1.:
+			printf "Digite seu nome: "
+			read nome
+			echo "Seu nome é: $nome"
+
+			ou
+
+			read -p "Digite seu nome: "
+			echo "Seu nome é $REPLY"
+			
+			no último caso é usado a variável de ambiente $REPLY
+
+		ex2.:
+			read -t 4 nome
+			neste caso é definido um tempo de espera para receber a resposta.
+
+		ex3.:
+			read -n1 resposta
+			defini uma quantidade de caracteres, quando satisfeito o comando é executado
+
+		ex4.:
+			read -s senha
+			para entrada de senhas
+
+		ex5.:
+			cat teste.txt | while read linha ; do echo $linha; done
+			
+			ou
+			
+			while read linha ; do echo $linha; done < teste.txt
+
+		[[ Criando funções ]]
+		ex1.:
+			function nomeFuncao {
+				bloco de comandos
+			}
+
+		ex2.:
+			nomeFuncao(){
+				bloco de comandos
+			}
+
+	[[ exemplo ]]
+
+	#!/bin/bash
+	# ls → lista os arquivos do diretório, um arquivo por linha e wc ­-l → retorna
+	a qtd de linhas
+	QTD_LINHAS=$(ls ­1 /home/seu_usuario/dicas/ | wc ­-l) 
+
+	# sorteia um número aleatório limitado à quantidade de arquivos do
+	diretório de dicas
+	LINHA=$[RANDOM%$QTD_LINHAS+1] 
+
+	# lista novamente os arquivos, e recupera o nome do arquivo na linha
+	sorteada
+	ARQ=$(ls ­1 /home/seu_usuario/dicas/ | tail ­n $LINHA | head ­n 1) 
+
+	# ler o arquivo da dica e mostra na tela
+	cat "/home/seu_usuario/msg/$ARQ" 
+
+	#.EOF
+
+	<hr />
+
+	[[ Funções ]]
+
+	funcao(){
+		...
+	}
+
+	-Chamando uma função
+	funcao
+
+	-Passando parâmetro
+	funcao par1 par2 ...
+	funcao $@
+
+	funcao(){
+		echo "Parâmetros: " $@
+	}
+
+	Saída: Parâmetros: par1 par2 ...
+
+	Variável local
+	funcao(){
+		local var1="Variável apenas do escopo da função"
+		var2="Variável tratada como variável global"
+	}
+
+	<< Funções com nome de comandos >>
+
+	Usa-se a palavra resevada "builtin" para dá preverência ao comando externo
+
+	#>> Arquivo.teste
+
+	cd(){
+		...
+	}
+
+	cd   -- chama a função interna
+	builtin cd -- executa o comando externo cd
+
+
+	exemplo:
+
+	#>> arquivo 1
+
+	#!/bin/bash
+	source funcao_externa.sh
+
+	frutas="banana maçã pera goiaba jambo morango siriguela"
+
+	funcao ${frutas[@]:0} ${frutas[@]:1} ${frutas[@]:2} ${frutas[@]:3}
+
+
+	arquivo funcao_externa.sh
+
+	funcao() {
+		varArray=($1 $2 $3 $4)
+		echo ${varArray[*]}
+	}
+	
+	<hr />
+
+	[[ Uso do getopts ]]
+
+	# Used variables
+	# variable	description
+	# OPTIND	Holds the index to the next argument to be processed. This is how getopts "remembers" 
+	its own status between invocations. Also useful to shift the positional parameters after processing 
+	with getopts. OPTIND is initially set to 1, and needs to be re-set to 1 if you want to parse anything 
+	again with getopts 
+	# OPTARG	This variable is set to any argument for an option found by getopts. It also contains the 
+	option flag of an unknown option.
+	# OPTERR	(Values 0 or 1) Indicates if Bash should display error messages generated by the getopts 
+	builtin. The value is initialized to 1 on every shell startup - so be sure to always set it to 0 if 
+	you don't want to see annoying messages! OPTERR is not specified by POSIX for the getopts builtin 
+	utility — only for the C getopt() function in unistd.h (opterr). OPTERR is bash-specific and not 
+	supported by shells such as ksh93, mksh, zsh, or dash.
+
+	# Specify what you want
+	# The base-syntax for getopts is:
+
+	# getopts OPTSTRING VARNAME [ARGS...]
+	# where:
+	# OPTSTRING	tells getopts which options to expect and where to expect arguments (see below)
+	# VARNAME	tells getopts which shell-variable to use for option reporting
+	# ARGS	tells getopts to parse these optional words instead of the positional parameters
+
+
+	while getopts ab:cde OPCAO; do
+		case "${OPCAO}" in
+			a) recebi_a=1 ;;
+			b) argumento_b="${OPTARG}" ;;
+			c) recebi_c=1 ;;
+			d) recebi_d=1 ;;
+			e) recebi_e=1 ;;
+		esac
+	done
+
+	echo "Valor de OPTIND ao sair do getopts: $OPTIND"
+
+	todos_args=( $@ )
+	echo $todos_args
+
+	n_args=${#todos_args[@]}
+	echo $n_args
+
+	# Argumentos sem opções
+	for indice in `seq $((OPTIND-1)) $((n_args-1))`; do
+		echo "Argumento $indice: ${todos_args[$indice]}"
+	done
+	exit 0
+		</PRE>
+	</div>
+</section>
+
+	</body>
+</html>
