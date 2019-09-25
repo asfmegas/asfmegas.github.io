@@ -75,19 +75,20 @@ alias cmlop='cml -op'
 Realiza pesquisa:
 
 <img src="img/portfolio/scriptcml/comando-cml.png" alt="Comando cml">
+
 Exibi informações:
 
 <img src="img/portfolio/scriptcml/comondo-cml02.png" alt="Comando cml 2">
 
-Exibir informações salvas sobre o comando sed:
+Exibir informações salvas do comando sed:
 
 <img src="img/portfolio/scriptcml/comando-sed.png" alt="Comando sed">
 <img src="img/portfolio/scriptcml/comando-sed02.png" alt="Comando sed 2">
 
-Comando $ cml -cc sed:
+Comando:
+$ cml -cc sed:
 
 <img src="img/portfolio/scriptcml/comando-sed03.png" alt="Comando sed 3">
-
 
 <hr />
 [[ Script cml ]]
@@ -129,24 +130,24 @@ getListHTML() {
 		arq=$(echo "post_$arq")
 	fi
 	if [ -f $HOME/cml_doc/$2/$arq.txt ] ; then
-		echo "<!doctype html>" > $HOME/pag_tmp.html
-		echo "<html>" >> $HOME/pag_tmp.html
-		echo "<head>" >> $HOME/pag_tmp.html
-		echo "<meta charset='utf-8' />" >> $HOME/pag_tmp.html
-		echo "<title>$3 $1</title>" >> $HOME/pag_tmp.html
-		echo "<link rel='stylesheet' href='$HOME/mybin/style-cml.css'>" >> $HOME/pag_tmp.html
-		echo "</head>" >> $HOME/pag_tmp.html
-		echo "<body>" >> $HOME/pag_tmp.html
-		echo "<div id='conteudo'>" >> $HOME/pag_tmp.html
-		echo "<pre>" >> $HOME/pag_tmp.html
+		echo "&lt;!doctype html&gt;" &gt; $HOME/pag_tmp.html
+		echo "&lt;html&gt;" &gt;&gt; $HOME/pag_tmp.html
+		echo "&lt;head&gt;" &gt;&gt; $HOME/pag_tmp.html
+		echo "&lt;meta charset='utf-8' /&gt;" &gt;&gt; $HOME/pag_tmp.html
+		echo "&lt;title&gt;$3 $1&lt;/title&gt;" &gt;&gt; $HOME/pag_tmp.html
+		echo "&lt;link rel='stylesheet' href='$HOME/mybin/style-cml.css'&gt;" &gt;&gt; $HOME/pag_tmp.html
+		echo "&lt;/head&gt;" &gt;&gt; $HOME/pag_tmp.html
+		echo "&lt;body&gt;" &gt;&gt; $HOME/pag_tmp.html
+		echo "&lt;div id='conteudo'&gt;" &gt;&gt; $HOME/pag_tmp.html
+		echo "&lt;pre&gt;" &gt;&gt; $HOME/pag_tmp.html
 		while read linha; do 
-			echo "$linha" >> $HOME/pag_tmp.html
-		done < $HOME/cml_doc/$2/$arq.txt
-		echo "</pre>" >> $HOME/pag_tmp.html
-		echo "</div>" >> $HOME/pag_tmp.html
-		echo "</body>" >> $HOME/pag_tmp.html
-		echo "</html>">> $HOME/pag_tmp.html
-		opera $HOME/pag_tmp.html --type=renderer &>/dev/null &
+			echo "$linha" &gt;&gt; $HOME/pag_tmp.html
+		done &lt; $HOME/cml_doc/$2/$arq.txt
+		echo "&lt;/pre&gt;" &gt;&gt; $HOME/pag_tmp.html
+		echo "&lt;/div&gt;" &gt;&gt; $HOME/pag_tmp.html
+		echo "&lt;/body&gt;" &gt;&gt; $HOME/pag_tmp.html
+		echo "&lt;/html&gt;" &gt;&gt; $HOME/pag_tmp.html
+		opera $HOME/pag_tmp.html --type=renderer &&gt;/dev/null &
 		echo "O aquivo foi criado com sucesso!"
 		echo "Para acessá-lo, vá a $HOME/pag_tmp.html"
 		exit 0
